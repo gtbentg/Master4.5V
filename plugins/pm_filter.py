@@ -451,7 +451,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-       )  
+       )
+       await query.message.delete()  
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴs ⚡️', callback_data='start')
