@@ -22,8 +22,8 @@ async def notify_admin(bot, message):
     report_date = datetime.datetime.now(pytz.utc).astimezone(ist).strftime("%d-%B-%Y")
     report_day = datetime.datetime.now(pytz.utc).astimezone(ist).strftime("%A")
 
-    reply_message = f"<b>✅ Report Send Successful ✅\n\n"
-    reply_message += f"👤 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ: {message.from_user.username}\n"
+    reply_message = f"<b><i>✅ Rᴇᴩᴏʀᴛ Sᴇɴᴅ Sᴜᴄᴄᴇꜱꜱꜰᴜʟʟ ✅</i></b>\n\n"
+    reply_message += f"<b>👤 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ: {message.from_user.username}\n"
     reply_message += f"🆔 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ ɪᴅ: {message.from_user.id}\n"
     reply_message += f"📝 Rᴇᴘᴏʀᴛ ᴛʀᴀᴄᴋ ɪᴅ: [#TG8836467]({message.link})\n\n"
     reply_message += f"💬 ʀᴇᴘᴏʀᴛ ᴛᴇxᴛ: {message.reply_to_message.text if message.reply_to_message else message.text.split(' ', 1)[1]}\n\n"
