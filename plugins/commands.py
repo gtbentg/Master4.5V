@@ -51,6 +51,7 @@ async def start(client, message):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+        await message.command.delete()
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
@@ -83,6 +84,7 @@ async def start(client, message):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+        await message.command.delete()
         return
     data = message.command[1]
     try:
