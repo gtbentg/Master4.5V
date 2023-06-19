@@ -68,14 +68,14 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer(f"മോനെ {query.from_user.first_name} ഇത് നിനക്കുലതല്ല 🤭\n\n{query.message.reply_to_message.from_user.first_name} ന്റെ റിക്വസ്റ്റ് ആണ് ഇത് 🙂\n\nʀᴇǫᴜᴇsᴛ ʏᴏᴜʀ ᴏᴡɴ 😘\n\n© ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ ", show_alert=True)
     try:
         offset = int(offset)
     except:
         offset = 0
     search = BUTTONS.get(key)
     if not search:
-        await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
+        await query.answer("അല്ലയോ മഹാൻ താങ്കൾ ക്ലിക്ക് ചെയ്തത് പഴയ മെസ്സേജ് ആണ് വേണമെങ്കിൽ ഒന്നും കൂടെ റിക്വസ്റ്റ് ചെയ് 😉\n\nYou are using this for one of my old message, please send the request again",show_alert=True)
         return
 
     files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
@@ -91,7 +91,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -118,20 +118,20 @@ async def next_page(bot, query):
         off_set = offset - 6
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("‹‹‹ Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"📃 Pᴀɢᴇs {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
-                                  callback_data="pages")]
+            [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
+             InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data="close_pages")]
         )
     elif off_set is None:
-        btn.append(
-            [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("Nᴇxᴛ ›››", callback_data=f"next_{req}_{key}_{n_offset}")])
+        btn.append([InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),
+                    InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
+                    InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("‹‹‹ Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("Nᴇxᴛ ›››", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
+                InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     btn.insert(0, 
@@ -192,20 +192,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Tʜᴇʀᴇ ᴀʀᴇ ɴᴏ ᴀᴄᴛɪᴠᴇ ᴄᴏɴɴᴇᴄᴛɪᴏɴꜱ!! Cᴏɴɴᴇᴄᴛ ᴛᴏ ꜱᴏᴍᴇ ɢʀᴏᴜᴘꜱ ғɪʀꜱᴛ.", quote=True)
-                    return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+                    return await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
             else:
                 await query.message.edit_text(
                     "Iᴀᴍ Nᴏᴛ Cᴏɴɴᴇᴄᴛᴇᴅ Tᴏ Aɴʏ Gʀᴏᴜᴩ \nCʜᴇᴄᴋ /connections Oʀ Cᴏɴɴᴇᴄᴛ Tᴏ Aɴʏ Gʀᴏᴜᴩ",
                     quote=True
                 )
-                return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+                return await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
 
         elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
             grp_id = query.message.chat.id
             title = query.message.chat.title
 
         else:
-            return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+            return await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
@@ -259,7 +259,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+        return await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -280,7 +280,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text('Some error occurred!!', parse_mode=enums.ParseMode.MARKDOWN)
-        return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+        return await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -303,7 +303,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Sᴏᴍᴇ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+        return await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -321,7 +321,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Sᴏᴍᴇ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+        return await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
     elif query.data == "backcb":
         await query.answer()
 
@@ -332,7 +332,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+            return await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
         buttons = []
         for groupid in groupids:
             try:
@@ -609,7 +609,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+    await query.answer('Cɪɴɪᴍᴀʟᴏᴋʜᴀᴍ')
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -638,7 +638,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -663,12 +663,11 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="Nᴇxᴛ ›››", callback_data=f"next_{req}_{key}_{offset}")]
+             [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),InlineKeyboardButton(text=f"1 - {round(int(total_results)/10)}", callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ", callback_data="pages")]
         )
     btn.insert(0, 
         [
