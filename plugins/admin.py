@@ -36,6 +36,7 @@ async def notify_admin(bot, message):
     m = await message.reply_text(reply_message, disable_web_page_preview=True)
     await asyncio.sleep(10)
     await m.delete()
+    await message.delete()
     for admin in administrators:
         try:
             if admin.user.id != message.from_user.id:
