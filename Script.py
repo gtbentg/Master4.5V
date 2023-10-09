@@ -1,22 +1,22 @@
 class script(object):
     START_TXT = """<b>Hᴇʟʟᴏ {}</b>
     
-<b>Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ</b> <b><a href=https://t.me/moviehub_support>Mᴏᴠɪᴇʜᴜʙ</a></b><b> Gʀᴏᴜᴘ. Nᴏ ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅ ᴡɪʟʟ ᴡᴏʀᴋ ᴏɴ ᴛʜɪs ʙᴏᴛ ᴇxᴄᴇᴘᴛ sᴛᴀʀᴛ. ᴅᴏɴ’ᴛ ᴡᴀsᴛᴇ ʏᴏᴜʀ ᴛɪᴍᴇ</b>"""
+<b>Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ</b> <b><a href=https://t.me/MovieBossTG>ᴍᴏᴠɪᴇ ʙᴏꜱꜱ</a></b><b> Gʀᴏᴜᴘ. Nᴏ ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅ ᴡɪʟʟ ᴡᴏʀᴋ ᴏɴ ᴛʜɪs ʙᴏᴛ ᴇxᴄᴇᴘᴛ sᴛᴀʀᴛ. ᴅᴏɴ’ᴛ ᴡᴀsᴛᴇ ʏᴏᴜʀ ᴛɪᴍᴇ</b>"""
     OWNER_TXT = """<b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟</b>
     
-<b>• ꜰᴜʟʟ ɴᴀᴍᴇ : 𝐀𝐉 𝐓𝐆</b>
-<b>• Uꜱᴇʀ ɴᴀᴍᴇ : @at_xu_l07
-• Usᴇʀ ɪᴅ :</b> <code>54313116807</code>
+<b>• ꜰᴜʟʟ ɴᴀᴍᴇ : Sʜᴀʜɪᴅ²ᵒ</b>
+<b>• Uꜱᴇʀ ɴᴀᴍᴇ : @GT_ben
+• Usᴇʀ ɪᴅ :</b> <code>1653535224</code>
     
 <b>∂σи'т вє αfяαι∂ σf вєιиg ∂ιffєяєит, вє αfяαι∂ σf вєιиg тнє ѕαмє αѕ єνєяуσиє єℓѕє</b>
     """
 
     ABOUT_TXT = """<b>৫ αвσυт ∂єν ৫</b>
 
-<b>• ηαмє : ɢᴛ ᠰ ʜᴇʀᴏ
-• υѕєя ηαмє : @GTHero
+<b>• ηαмє : ɢᴛ ᠰ ʙᴇɴ
+• υѕєя ηαмє : @GT_ben
 • υѕєя ι∂ :</b> <code>5283019077</code>
-<b>• ιηѕтαgяαм :</b> <b><a href=https://instagram.com/_gthero_?igshid=NGExMmI2YTkyZg==>ℓιηк</a></b>
+<b>• ιηѕтαgяαм :</b> <b><a href=https://instagram.com/_sshahid__?utm_source=qr&igshid=MThlNWY1MzQwNA==>ℓιηк</a></b>
   
 <b>∂σи'т вє αfяαι∂ σf вєιиg ∂ιffєяєит, вє αfяαι∂ σf вєιиg тнє ѕαмє αѕ єνєяуσиє єℓѕє</b>
     """
