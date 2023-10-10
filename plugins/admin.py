@@ -11,7 +11,7 @@ async def handle_message(client, message):
     try:
         if message.text.startswith("@admin"):
             # Send the loading message
-            loading_message = await message.reply("Report sending ○○○○○○○○○")
+            loading_message = await message.reply("Report sending ○○○○")
 
             report_text = message.text[6:]
             report_time = f"{datetime.datetime.now().strftime('%I:%M:%S %p')}"
